@@ -38,4 +38,4 @@ Build FAILED.
 
 # The guilty part
 
-[See CustomSdk/Sdk/sdk.props](blob/main/Source/CustomSdk/Sdk/Sdk.props)
+[See CustomSdk/Sdk/sdk.props](Source/CustomSdk/Sdk/Sdk.props)
