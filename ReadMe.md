@@ -27,8 +27,6 @@ dotnet build
 result:
 ```
   Determining projects to restore...
-  ProjectBeforeRestore: RepositoryRoot
-  ProjectBeforeRestore: PackageReadMeFullPath \
   ProjectBeforeRestore: EnableDefaultCompileItems false
   ProjectBeforeRestore: EnableDefaultItems true
 C:\Scal26\DotNet.MSBuild.Issue.13566\Source\SomeProject\SomeProject.csproj(15,9): warning : ProjectBeforeRestore: Compile ItemGroup is empty
@@ -40,4 +38,4 @@ Build FAILED.
 
 # The guilty part
 
-[See CustomSdk/Sdk/sdk.props](CustomSdk/Sdk/sdk.props)
+[See CustomSdk/Sdk/sdk.props](blob/main/Source/CustomSdk/Sdk/Sdk.props)
