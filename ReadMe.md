@@ -29,13 +29,13 @@ result:
   Determining projects to restore...
   ProjectBeforeRestore: EnableDefaultCompileItems false
   ProjectBeforeRestore: EnableDefaultItems true
-C:\Scal26\DotNet.MSBuild.Issue.13566\Source\SomeProject\SomeProject.csproj(15,9): warning : ProjectBeforeRestore: Compile ItemGroup is empty
+...\Source\SomeProject\SomeProject.csproj(15,9): warning : ProjectBeforeRestore: Compile ItemGroup is empty
   All projects are up-to-date for restore.
 CSC : error CS5001: Program does not contain a static 'Main' method suitable for an entry point [C:\Scal26\DotNet.MSBuild.Issue.13566\Source\SomeProject\SomeProject.csproj]
 
 Build FAILED.
 ```
 
-# The guilty part
+## The guilty part
 
 [See CustomSdk/Sdk/sdk.props](Source/CustomSdk/Sdk/Sdk.props)
