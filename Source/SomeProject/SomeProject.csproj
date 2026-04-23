@@ -1,0 +1,17 @@
+﻿<Project Sdk="$(MSBuildThisFileDirectory)..\CustomSdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <Target Name="ProjectBeforeRestore" BeforeTargets="Restore">
+        <Message Importance="High"  Text="ProjectBeforeRestore: EnableDefaultCompileItems $(EnableDefaultCompileItems)" />
+        <Message Importance="High"  Text="ProjectBeforeRestore: EnableDefaultItems $(EnableDefaultItems)" />
+        <Warning                    Text="ProjectBeforeRestore: Compile ItemGroup is empty"   Condition="'@(Compile)' == ''" />
+        <Message Importance="High"  Text="ProjectBeforeRestore: Compile %(Compile.Identity)"  Condition="'@(Compile)' != ''" />
+    </Target>
+
+</Project>

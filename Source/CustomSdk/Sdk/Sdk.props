@@ -1,0 +1,23 @@
+<Project>
+
+    <PropertyGroup Label="Define the ReadMe as being above/oustide the project cone">
+        <!-- For the sake of the demo, comment this out
+            I know it is incorrect, but the goal is to show that it does not compile anymore
+            because EnableDefaultCompileItems is set to false WITHOUT any warning.
+        <ReadMeFileName         >ReadMe.md</ReadMeFileName>
+        -->
+        <!-- The repository root is where the ReadMe is found (above the project) -->
+        <RepositoryRoot         Condition="'$(RepositoryRoot)' == ''"
+                                >$([MSBuild]::GetDirectoryNameOfFileAbove('$(MSBuildProjectDirectory)', '$(ReadMeFileName)'))</RepositoryRoot>
+        <PackageReadMeFullPath  >$(RepositoryRoot)\$(ReadMeFileName)</PackageReadMeFullPath>
+        <PackageReadMeFile      Condition="'$(PackageReadMeFullPath)' != '' And Exists('$(PackageReadMeFullPath)')"
+                                >$(ReadMeFileName)</PackageReadMeFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Pack="true" PackagePath="" Include="$(PackageReadMeFullPath)" Condition="Exists('$(PackageReadMeFullPath)')" />
+    </ItemGroup>
+
+    <Import Project="Sdk.props"     Sdk="Microsoft.NET.Sdk" />
+
+</Project>
