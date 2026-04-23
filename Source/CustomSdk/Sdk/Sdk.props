@@ -4,6 +4,8 @@
         <!-- For the sake of the demo, comment this out
             I know it is incorrect, but the goal is to show that it does not compile anymore
             because EnableDefaultCompileItems is set to false WITHOUT any warning.
+            The problem was discovered with a far more complex scenario where such mistake were not not invoved,
+            but I found this simple case allowing to reproduce the case.
         <ReadMeFileName         >ReadMe.md</ReadMeFileName>
         -->
         <!-- The repository root is where the ReadMe is found (above the project) -->
@@ -17,6 +19,13 @@
     <ItemGroup>
         <None Pack="true" PackagePath="" Include="$(PackageReadMeFullPath)" Condition="Exists('$(PackageReadMeFullPath)')" />
     </ItemGroup>
+
+    <!--
+        Note that trying to force EnableDefaultCompileItems does not change anything at all.
+    <PropertyGroup>
+        <EnableDefaultCompileItems>true</EnableDefaultCompileItems>
+    </PropertyGroup>
+    -->
 
     <Import Project="Sdk.props"     Sdk="Microsoft.NET.Sdk" />
 
