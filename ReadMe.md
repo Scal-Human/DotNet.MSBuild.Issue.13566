@@ -17,7 +17,7 @@ I know now this is an error and items must be defined later in a target.
 
 Because of unrelated properties/items, all of a sudden the project does not compile anymore.
 
-The bug is to set `EnableDefaultCompileItems` to `false` without informing the user resulting in an empty `Compile` item.
+The bug is to have an empty `Compile` item group without informing the user that it will not be populated.
 
 ## Reproduce the error
 
@@ -29,10 +29,10 @@ dotnet build
 result:
 ```
   Determining projects to restore...
-  ProjectBeforeRestore: EnableDefaultCompileItems false
-  ProjectBeforeRestore: EnableDefaultItems true
-...\Source\SomeProject\SomeProject.csproj(15,9): warning : ProjectBeforeRestore: Compile ItemGroup is empty
   All projects are up-to-date for restore.
+  ProjectBeforeRestore: EnableDefaultCompileItems true
+  ProjectBeforeRestore: EnableDefaultItems true
+C:\Scal26\DotNet.MSBuild.Issue.13566\Source\SomeProject\SomeProject.csproj(13,9): warning : ProjectBeforeRestore: Compile ItemGroup is empty
 CSC : error CS5001: Program does not contain a static 'Main' method suitable for an entry point [C:\Scal26\DotNet.MSBuild.Issue.13566\Source\SomeProject\SomeProject.csproj]
 
 Build FAILED.
