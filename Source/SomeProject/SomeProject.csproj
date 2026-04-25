@@ -7,7 +7,7 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <Target Name="ProjectBeforeRestore" BeforeTargets="Restore">
+    <Target Name="ProjectShowInfo" BeforeTargets="BeforeBuild">
         <Message Importance="High"  Text="ProjectBeforeRestore: EnableDefaultCompileItems $(EnableDefaultCompileItems)" />
         <Message Importance="High"  Text="ProjectBeforeRestore: EnableDefaultItems $(EnableDefaultItems)" />
         <Warning                    Text="ProjectBeforeRestore: Compile ItemGroup is empty"   Condition="'@(Compile)' == ''" />

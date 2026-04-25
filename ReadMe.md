@@ -1,6 +1,8 @@
 # DotNet.MSBuild.Issue.13566
 
-EnableDefaultCompileItems forced to false without warning message.
+Compile item group not populated without warning message.
+
+Was wrongly titled "EnableDefaultCompileItems forced to false without warning message."
 
 [See on GitHub](https://github.com/dotnet/msbuild/issues/13566)
 
